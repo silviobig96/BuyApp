@@ -9,6 +9,7 @@
 <p>HOLA HOLA </p>
 <p>HOLA HOLA </p>
 <p>HOLA HOLA </p>
+<p>Despues arreglo el boton add </p>
 <Boton/> 
 </div>
   
