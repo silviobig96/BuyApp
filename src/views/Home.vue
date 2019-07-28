@@ -10,7 +10,7 @@
 <p>HOLA HOLA </p>
 <p>HOLA HOLA </p>
 <p>Despues arreglo el boton add </p>
-<Boton/> 
+<Boton ruta="New_post"/> 
 </div>
   
 </template>

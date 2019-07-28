@@ -6,6 +6,7 @@ import Acerca_de from './views/Acercade'
 import Sugerencia from './views/Sugerencia'
 import Que_hay_denuevo from './views/Nuevo'
 import Ajustes from './views/Ajustes'
+import New_post from './views/New_post'
 
 
 Vue.use(Router)
@@ -48,7 +49,12 @@ export default new Router({
       path: '/Acerca_de',
       name: 'Acerca_de',
       component: Acerca_de
-    },    
+    },  
+    {
+      path: '/New_post',
+      name: 'New_post',
+      component: New_post
+    },  
     {
       path: '/about',
       name: 'about',
