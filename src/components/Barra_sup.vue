@@ -3,6 +3,9 @@
 <v-app-bar app dark flat hide-on-scroll>
 
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+            
+      <!-- Boton de Categoria -->
+      
 
       <div class="text-xs-center">
         <v-bottom-sheet v-model="sheet">
@@ -28,6 +31,8 @@
           </v-list>
         </v-bottom-sheet>
       </div>
+            
+      <!-- Elementos de la barra de Navegacion -->
 
       <v-spacer></v-spacer>
       <v-btn icon>
@@ -58,7 +63,9 @@
     </v-menu>
     
     </v-app-bar>
-
+            
+      <!-- Drawer -->
+      
     <v-navigation-drawer
       v-model="drawer"
       absolute
@@ -79,11 +86,8 @@
         </v-flex>
       </v-layout>
       </v-img>
-      
-      <v-list
-        nav
-        dense
-      >
+
+      <v-list nav dense>
         <v-list-item-group v-model="item" color="#1DE9B6s">
           <v-list-item
             v-for="(item, i) in items"
