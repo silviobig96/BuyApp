@@ -15,7 +15,7 @@
 
         
 
-        <v-layout wrap>
+        <v-layout wrap >
             <v-flex xs12>
                 <v-card class="ml-4 mr-4" dense>
                     <v-form class="px-3">
@@ -26,6 +26,7 @@
                     </v-form>
                 </v-card>
             </v-flex>
+            
             <v-flex xs12>
                 <v-card class="ml-4 mr-4" dense>
                     <v-form class="px-3">
@@ -33,10 +34,16 @@
 
                         <!-- Subir foto y mostrar -->
                         
-                        <v-flex xs12 class="text-xs-center text-sm-center text-md-center text-lg-center">
+                        <v-flex xs12 class="text-xs-center text-sm-center text-md-center text-lg-center" >
                             <v-img  :src="imageUrl" alt="Subir una imagen" v-if="imageUrl"></v-img>
                            <!--  <img :src="imageUrl" height="150" v-if="imageUrl"/> -->
-                            <v-text-field label="Select Image" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
+                           <!-- <v-card dark @click='pickFile' v-model='imageName' max-width="100%" height="200" class="text-center ">
+                               <v-img  :src="imageUrl" alt="Subir una imagen" v-if="imageUrl"></v-img>
+                               <v-icon >add_a_photo</v-icon>
+                               
+                           </v-card> -->                         
+                           
+                            <v-text-field color="oficial" label="Seleciona una imagen de tu Oferta" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
                             <input
                                 type="file"
                                 style="display: none"
