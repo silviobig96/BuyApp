@@ -137,10 +137,12 @@
         </v-card> 
         </v-flex>
 
-          
-          
+
+          <Boton ruta="New_post"/> 
+
+        
   </v-layout>
-  <Boton/> 
+   
 </v-container>
   
 </template>

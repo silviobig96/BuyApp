@@ -20,11 +20,12 @@
                         <v-flex xs12>
                           <v-card
                             class="mx-auto ml-4 mr-4"
+                            :to="{name: 'Det_post'}"
                           >
                             <v-list-item>
-                              <v-list-item-avatar color="grey"><img src="https://randomuser.me/api/portraits/men/85.jpg" high="20px" width="20px"></v-list-item-avatar>
+                              <v-list-item-avatar  color="grey"><img src="https://randomuser.me/api/portraits/men/85.jpg" high="20px" width="20px"></v-list-item-avatar>
                               <v-list-item-content>
-                                <v-list-item-title class="headline"><span>Laptop MSI</span></v-list-item-title>
+                                <v-list-item-title class="headline"><span >Laptop MSI</span></v-list-item-title>
                                 <v-list-item-subtitle>Por silviobig96</v-list-item-subtitle>
                               </v-list-item-content>
                               <v-list-item-action>
