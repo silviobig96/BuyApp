@@ -8,9 +8,10 @@ import Que_hay_denuevo from './views/Nuevo'
 import Ajustes from './views/Ajustes'
 import New_post from './views/New_post'
 import Det_post from './views/Det_post'
-
 import Nueva_sug from './views/Nueva_sug'
 import Notificaciones from './views/Notificaciones'
+import userProfile from './views/userProfile'
+
 
 Vue.use(Router)
 
@@ -72,6 +73,11 @@ export default new Router({
       path: '/Det_post',
       name: 'Det_post',
       component: Det_post
+    },
+    {
+      path: '/userProfile',
+      name: 'userProfile',
+      component: userProfile
     }, 
     {
       path: '/about',

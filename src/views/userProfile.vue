@@ -7,15 +7,15 @@
         <v-btn icon :to="{name: 'home'}">
           <v-icon>arrow_back</v-icon>
         </v-btn>
-        <v-toolbar-title>@Silviobig96</v-toolbar-title>
+        <v-toolbar-title>@Josephnyjs</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-app-bar>
     </v-layout>
     <v-layout justify-center align-center>
       <v-avatar size="80">
-        <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="avatar" />
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="avatar" />
       </v-avatar>
-      <v-btn class="ma-5" outlined color="#69a286">Editar perfil</v-btn>
+      <v-btn class="ma-5" outlined color="#69a286">Seguir</v-btn>
     </v-layout>
     <v-layout justify-center align-center-between class="mt-2">
       <v-flex class="text-center">
