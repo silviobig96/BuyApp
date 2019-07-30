@@ -84,14 +84,14 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },  
     {
-      path: '/Registrar',
-      name: 'Registrar',
-      component: Registrar
-    },  
-    {
       path: '/Iniciarsesion',
       name: 'Iniciarsesion',
       component: Iniciarsesion
+    },  
+    {
+      path: '/Registrar',
+      name: 'Registrar',
+      component: Registrar
     }
   ]
 })

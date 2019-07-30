@@ -33,7 +33,7 @@
             type="password"
           ></v-text-field>
           <span class="caption grey--text text--darken-1">
-            Por favor ingrese una contraseña para su cuenta
+            Por favor ingrese una contraseña para su cuenta.
           </span>
         </v-card-text>
            <v-card-actions>

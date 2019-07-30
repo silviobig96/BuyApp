@@ -30,7 +30,7 @@
           ></v-text-field>
 
           <span class="caption grey--text text--darken-1">
-            Por favor ingrese sus datos correctamente 
+            Por favor ingrese sus datos correctamente.
           </span>
         </v-card-text>
            <v-card-actions>
