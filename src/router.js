@@ -8,6 +8,8 @@ import Que_hay_denuevo from './views/Nuevo'
 import Ajustes from './views/Ajustes'
 import New_post from './views/New_post'
 import Det_post from './views/Det_post'
+import Registrarse from './views/Registrarse'
+import Iniciarsesion from './views/Iniciarsesion'
 
 
 Vue.use(Router)
@@ -68,6 +70,16 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },  
+    {
+      path: '/Registrarse',
+      name: 'Registrarse',
+      component: Registrarse
+    },  
+    {
+      path: '/Iniciarsesion',
+      name: 'Iniciarsesion',
+      component: Iniciarsesion
     }
   ]
 })

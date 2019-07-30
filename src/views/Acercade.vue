@@ -45,7 +45,7 @@
                 </v-subheader>
                 </v-flex>
             </v-layout>
-            <a href="#">Políticas de privacidad</a>
+            <a href="#" style="color:#000000">Políticas de privacidad</a>
         </v-container>
 </template>
 
