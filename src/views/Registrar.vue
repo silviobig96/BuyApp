@@ -16,7 +16,7 @@
             <v-flex> <center>
 
                <v-img :src="require('../assets/LOGO.fw.png')" high="200px" width="200px"></v-img>
-               <p style="color:#FFFFFF">¡¡Bienvenido de vuelta!!</p>
+               <p style="color:#FFFFFF">¡Bienvenido! Créate una cuenta cuenta para unirte a la comunidad y conseguir los mejores productos</p>
                </center>
 <v-card>
                <v-card-text >
@@ -28,9 +28,12 @@
             label="Contraseña"
             type="password"
           ></v-text-field>
-
+          <v-text-field color="oficial"
+            label="Confirmar contraseña"
+            type="password"
+          ></v-text-field>
           <span class="caption grey--text text--darken-1">
-            Por favor ingrese sus datos correctamente 
+            Por favor ingrese una contraseña para su cuenta
           </span>
         </v-card-text>
            <v-card-actions>
@@ -43,8 +46,8 @@
     </v-card-actions>
    
 </v-card>
-<br><br>
-<center> <a href="Registrarse"  style="color:#FFFFFF;">¿Intentas crearte una cuenta?</a></center>
+
+<center> <a href="Iniciarsesion"  style="color:#FFFFFF;">¿Intentas iniciar sesión?</a></center>
         
                
     </v-flex>  </v-flex>

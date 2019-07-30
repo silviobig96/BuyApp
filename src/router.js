@@ -8,7 +8,7 @@ import Que_hay_denuevo from './views/Nuevo'
 import Ajustes from './views/Ajustes'
 import New_post from './views/New_post'
 import Det_post from './views/Det_post'
-import Registrarse from './views/Registrarse'
+import Registrar from './views/Registrar'
 import Iniciarsesion from './views/Iniciarsesion'
 
 
@@ -72,9 +72,9 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },  
     {
-      path: '/Registrarse',
-      name: 'Registrarse',
-      component: Registrarse
+      path: '/Registrar',
+      name: 'Registrar',
+      component: Registrar
     },  
     {
       path: '/Iniciarsesion',
