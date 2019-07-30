@@ -119,7 +119,7 @@
         <v-card-actions>
         <v-list-item class="grow">
         <v-list-item-content>
-        <v-list-item-title>Joshepny</v-list-item-title>
+        <v-list-item-title>Josephny</v-list-item-title>
         </v-list-item-content>
 
         <v-layout
@@ -140,13 +140,14 @@
           
           
   </v-layout>
-  <Boton/> 
+  <Boton ruta="Nueva_sug"/> 
 </v-container>
   
 </template>
 
 <script>
 import Boton  from '../components/Boton.vue'
+
   export default {
     data: () => ({
       //
