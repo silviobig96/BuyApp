@@ -1,142 +1,108 @@
+
+
 <template>
-  <div>
-    <v-app-bar app dark flat hide-on-scroll>
-      <v-btn icon :to="{name: 'home'}">
-        <v-icon>arrow_back</v-icon>
-      </v-btn>
-      <v-toolbar-title>mflores09</v-toolbar-title>
-      <v-spacer></v-spacer>
-    </v-app-bar>
-
-    <v-flex xs12>
-      <div class="ma-2">
-        <v-flex xs12 class="text-xs-center text-sm-center text-md-center text-lg-center">
-          <v-avatar size="80">
-            <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="avatar" />
-          </v-avatar>
-           <v-btn class="ma-2" outlined color="#69a286">Editar perfil</v-btn>
-        </v-flex>
-      </div>
-      <v-card
-    class="mx-auto"
-    max-width="400"
-  >
-
-    <v-card class="text-legth" >
-   
-    <div class="my-2">
-        <v-flex xs12 sm4 text-center>
-            <div class="my-2"> 
-                <div class="my-2">
-                    <v-btn text small>24</v-btn>
-                </div> 
-                <div class="my-2">
-                    <v-btn text small>Posts</v-btn>
-                </div> 
-            </div>
-        </v-flex>
-        <v-flex xs12 sm4 text-center>
-            <div class="my-2"> 
-                <div class="my-2">
-                    <v-btn text small>29</v-btn>
-                </div> 
-                <div class="my-2">
-                    <v-btn text small>Seguidos</v-btn>
-                </div> 
-            </div>
-        </v-flex>
-        <v-flex xs12 sm4 text-center>
-            <div class="my-2"> 
-                <div class="my-2">
-                    <v-btn text small>58</v-btn>
-                </div> 
-                <div class="my-2">
-                    <v-btn text small>SEguidores</v-btn>
-                </div> 
-            </div>
-        </v-flex>
-    </div>
-    </v-card> 
-  <!--
-    <v-system-bar color="indigo darken-2"></v-system-bar>
-
-    <v-toolbar
-      color="indigo"
-      dark
-    >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Discover</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>search</v-icon>
-      </v-btn>
-    </v-toolbar> -->
-
-    <v-container
-      fluid
-      grid-list-md
-      pa-2
-    >
-      <v-layout
-        wrap
-      >
-        <v-flex
-          v-for="card in cards"
-          :key="card.title"
-          v-bind="{ [`xs${card.flex}`]: true }"
+  <v-container>
+    <v-layout>
+      <v-app-bar app dark flat hide-on-scroll>
+        <v-btn icon :to="{name: 'home'}">
+          <v-icon>arrow_back</v-icon>
+        </v-btn>
+        <v-toolbar-title>@Bigotto69</v-toolbar-title>
+        <v-spacer></v-spacer>
+      </v-app-bar>
+    </v-layout>
+    <v-layout justify-center align-center>
+      <v-avatar size="80">
+        <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="avatar" />
+      </v-avatar>
+      <v-btn class="ma-5" outlined color="#69a286">Editar perfil</v-btn>
+    </v-layout>
+    <v-layout justify-center align-center-between class="mt-2">
+      <v-flex class="text-center">
+        <div>24</div>
+        <div>POSTS</div>
+      </v-flex>
+      <v-flex class="text-center">
+        <div>123</div>
+        <div>SEGUIDOS</div>
+      </v-flex>
+      <v-flex class="text-center">
+        <div>321</div>
+        <div>SEGUIDORES</div>
+      </v-flex>
+    </v-layout>
+    <v-layout>
+      <v-flex xs12 mt-6>
+        <v-card
+          class="mx-auto ml-4 mr-4"
+          color="rgba(191, 194, 191, 0.87)"
+          :to="{name: 'Det_post'}"
         >
-          <v-card>
-            <v-img
-              :src="card.src"
-              class="white--text"
-              height="200px"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-            >
-              <v-card-title
-                class="fill-height align-end"
-                v-text="card.title"
-              ></v-card-title>
-            </v-img>
+          <v-list-item>
+            <v-list-item-content>
+              <v-list-item-title class="headline">
+                <span>Laptop MSI</span>
+              </v-list-item-title>
+            </v-list-item-content>
+            <v-list-item-action>
+              <v-list-item-action-text>
+                <v-icon class="mr-1">schedule</v-icon>
+                <span class="subheading">1h</span>
+              </v-list-item-action-text>
+            </v-list-item-action>
+          </v-list-item>
 
-            <v-card-actions>
-              <v-spacer></v-spacer>
+          <v-img src="../assets/Post/laptop.png"></v-img>
 
-              <v-btn icon>
-                <v-icon>favorite</v-icon>
+          <v-card-text>En venta Laptop MSI GS-72QD en la pagina de Amazon estan en oferta por solo 699$</v-card-text>
+
+          <v-layout align-center justify-end>
+            <v-flex xs6>
+              <v-card-actions>
+                <v-list-item class="grow">
+                  <v-icon class="mr-1">question_answer</v-icon>
+                  <span class="subheading mr-2">256</span>
+                  <v-icon class="mr-1">thumb_up</v-icon>
+                  <span class="subheading">45</span>
+                </v-list-item>
+              </v-card-actions>
+            </v-flex>
+            <v-flex xs12>
+              <v-btn color="#69a286" x-small text>
+                VER TU PRODUCTO
+                <v-icon>launch</v-icon>
               </v-btn>
-
-              <v-btn icon>
-                <v-icon>bookmark</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>share</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-card>
-    
-    </v-flex>
-  </div>
+            </v-flex>
+          </v-layout>
+        </v-card>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 
 <script>
-  export default {
-    data: () => ({
-      cards: [
-        { title: 'Laptop HP', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
-        { title: 'Beats by Dr. Dre', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
-        { title: 'Reeboks', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-      ],
-    }),
-  }
+export default {
+  data: () => ({
+    cards: [
+      {
+        title: "Laptop HP",
+        src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
+        flex: 12
+      },
+      {
+        title: "Beats by Dr. Dre",
+        src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+        flex: 6
+      },
+      {
+        title: "Reeboks",
+        src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+        flex: 6
+      }
+    ]
+  })
+};
 </script>
 
  [Foto]
