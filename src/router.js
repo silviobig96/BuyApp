@@ -9,6 +9,8 @@ import Ajustes from './views/Ajustes'
 import New_post from './views/New_post'
 import Det_post from './views/Det_post'
 
+import Nueva_sug from './views/Nueva_sug'
+import Notificaciones from './views/Notificaciones'
 
 Vue.use(Router)
 
@@ -55,7 +57,17 @@ export default new Router({
       path: '/New_post',
       name: 'New_post',
       component: New_post
-    },  
+    }, 
+    {
+      path: '/Nueva_sug',
+      name: '/Nueva_sug',
+      component: Nueva_sug
+    },
+    {
+      path: '/Notificaciones',
+      name: '/Notificaciones',
+      component: Notificaciones
+    },
     {
       path: '/Det_post',
       name: 'Det_post',
