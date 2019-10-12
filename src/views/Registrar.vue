@@ -19,18 +19,37 @@
                <p style="color:#FFFFFF">¡Bienvenido! Créate una cuenta cuenta para unirte a la comunidad y conseguir los mejores productos</p>
                </center>
 <v-card>
+   <v-form @submit.prevent="agregarUsuario(usuario)" v-model="valid" v-if="agregar">
                <v-card-text >
           <v-text-field color="oficial" 
+            v-model="usuario.email"
+            :rules="emailRules"
             label="Email"
-            value=""
+            required
           ></v-text-field>
           <v-text-field color="oficial"
+            v-model="usuario.contraseña"
+            :append-icon="show1 ? 'visibility' : 'visibility_off'"
+            :rules="[rules.required, rules.min]"
+            :type="show1 ? 'text' : 'password'"
+            name="input-10-1"
             label="Contraseña"
-            type="password"
+            hint="Al menos 8 caracteres"
+            counter
+            @click:append="show1 = !show1"
+            required
           ></v-text-field>
           <v-text-field color="oficial"
-            label="Confirmar contraseña"
-            type="password"
+            v-model="con_password"
+            :append-icon="show1 ? 'visibility' : 'visibility_off'"
+            :rules="[rules.required, rules.min]"
+            :type="show1 ? 'text' : 'password'"
+            name="input-10-1"
+            label="Confirmar Contraseña"
+            hint="Al menos 8 caracteres"
+            counter
+            @click:append="show1 = !show1"
+            required
           ></v-text-field>
           <span class="caption grey--text text--darken-1">
             Por favor ingrese una contraseña para su cuenta.
@@ -39,15 +58,20 @@
            <v-card-actions>
       <v-spacer></v-spacer>
       <v-btn
+        type="submit"
         color="oficial"
       >
         Confirmar
       </v-btn>
     </v-card-actions>
-   
+  </v-form>
 </v-card>
 
-<center> <a href="Iniciarsesion"  style="color:#FFFFFF;">¿Intentas iniciar sesión?</a></center>
+<center>
+  <router-link to="/Iniciarsesion" style="color:#FFFFFF;">
+  ¿Intentas iniciar sesión?
+  </router-link> 
+</center>
         
                
     </v-flex>  </v-flex>
@@ -58,3 +82,49 @@
 </v-container>
   
 </template>
+
+<script>
+export default {
+  data: () => ({
+      valid: false,
+      email: '',
+      emailRules: [
+        v => !!v || 'E-mail Requerido',
+        v => /.+@.+/.test(v) || 'E-mail Debe ser valido @ejemplo.com',
+      ],
+      show1: false,
+        show2: true,
+        show3: false,
+        show4: false,
+      con_password: '',
+        rules: {
+          required: value => !!value || 'Cotraseña requerida',
+          min: v => v.length >= 8 || 'Min 8 caracteres',
+        },
+        usuarios: [],
+        usuario: {email:'',contraseña:''},
+        agregar: true,
+    }),
+    methods:{
+      agregarUsuario(item){
+      this.axios.post('new_usuario', item)
+        .then(res => {
+          // Agrega al inicio del array Usuarios
+          this.Usuario.unshift(res.data);
+
+          // Alerta de mensaje
+          console.log(res.data);
+          console.log('Usuario Creado Exitosamente');
+        })
+        .catch( e => {
+          console.log(e.response);
+
+          // Alerta de mensaje
+          console.log("Error 404 ");
+        })
+      this.usuarios = {}
+    }
+    }
+  
+}
+</script>

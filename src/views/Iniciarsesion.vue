@@ -44,7 +44,9 @@
    
 </v-card>
 <br><br>
-<center> <a href="Registrarse"  style="color:#FFFFFF;">¿Intentas crearte una cuenta?</a></center>
+<center>
+  <router-link to="/Registrar" style="color:#FFFFFF;">¿Intentas crearte una cuenta?</router-link> 
+</center> 
         
                
     </v-flex>  </v-flex>

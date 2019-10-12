@@ -7,6 +7,13 @@ import '@babel/polyfill'
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+ 
+Vue.use(VueAxios, axios)
+
+axios.defaults.baseURL = 'http://localhost:3000';
+
 Vue.config.productionTip = false
 
 new Vue({

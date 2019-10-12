@@ -13,7 +13,7 @@
     </v-layout>
     <v-layout justify-center align-center>
       <v-avatar size="80">
-        <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="avatar" />
+        <img src="../assets/Usuarios/img_usuario_vacio.png" alt="avatar" />
       </v-avatar>
       <v-btn class="ma-5" outlined color="#69a286">Editar perfil</v-btn>
     </v-layout>
