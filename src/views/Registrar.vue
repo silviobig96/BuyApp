@@ -19,7 +19,7 @@
                <p style="color:#FFFFFF">¡Bienvenido! Créate una cuenta cuenta para unirte a la comunidad y conseguir los mejores productos</p>
                </center>
 <v-card>
-   <v-form @submit.prevent="agregarUsuario(usuario)" v-model="valid" v-if="agregar">
+   <v-form @submit.prevent="agregarUsuario()" v-model="valid">
                <v-card-text >
           <v-text-field color="oficial" 
             v-model="usuario.email"
@@ -57,12 +57,34 @@
         </v-card-text>
            <v-card-actions>
       <v-spacer></v-spacer>
+
       <v-btn
         type="submit"
         color="oficial"
+        @click="overlay = !overlay ,snackbar = true"
       >
         Confirmar
       </v-btn>
+
+      <v-overlay :value="overlay">
+        <v-progress-circular indeterminate size="64"></v-progress-circular>
+      </v-overlay>
+
+      <v-snackbar
+      v-model="snackbar"
+      :timeout="timeout"
+      :multi-line="true"
+      top
+    >
+      {{ text }}
+      <v-btn
+        color="blue"
+        text
+        @click="snackbar = false"
+      >
+        Close
+      </v-btn>
+    </v-snackbar>
     </v-card-actions>
   </v-form>
 </v-card>
@@ -71,16 +93,11 @@
   <router-link to="/Iniciarsesion" style="color:#FFFFFF;">
   ¿Intentas iniciar sesión?
   </router-link> 
-</center>
-        
-               
-    </v-flex>  </v-flex>
-
-
+</center>        
+    </v-flex>
+      </v-flex>
   </v-layout>
-
 </v-container>
-  
 </template>
 
 <script>
@@ -103,28 +120,36 @@ export default {
         },
         usuarios: [],
         usuario: {email:'',contraseña:''},
-        agregar: true,
+        overlay: false,
+        snackbar: false,
+        text: 'Error Registro No exitoso',
+        timeout: 4000,
     }),
     methods:{
-      agregarUsuario(item){
-      this.axios.post('new_usuario', item)
+      agregarUsuario(){
+      this.axios.post('/new_usuario', this.usuario)
         .then(res => {
-          // Agrega al inicio del array Usuarios
-          this.Usuario.unshift(res.data);
-
-          // Alerta de mensaje
-          console.log(res.data);
+          this.usuarios.push(res.data);
           console.log('Usuario Creado Exitosamente');
+          this.$router.push('/');
         })
         .catch( e => {
           console.log(e.response);
-
-          // Alerta de mensaje
-          console.log("Error 404 ");
+          if(e.response.data.error.errors.email.mensaje){
+            console.log(e.response.data.error.errors.email.mensaje);
+          }else{
+            console.log("Error 404 ");
+          }
         })
-      this.usuarios = {}
-    }
-    }
+    },
+    },
+    watch: {
+      overlay (val) {
+        val && setTimeout(() => {
+          this.overlay = false
+        }, 3000)
+      },
+    },
   
 }
 </script>

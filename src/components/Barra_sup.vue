@@ -81,7 +81,9 @@
           </router-link> 
         </v-flex>
         <v-flex mt-5 align-end >
+          <router-link tag="p" to="/Iniciarsesion">
           <span class="white--text">Iniciar Sesión</span>
+          </router-link> 
         </v-flex>
       </v-layout>
       </v-img>
