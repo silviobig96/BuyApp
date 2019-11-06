@@ -1,16 +1,10 @@
 <template>
-<div>
+<div> 
     <Barra_sup/>
     <vmenu/>
-    <p>HOLA HOLA </p>
-<p>HOLA HOLA </p>
-<p>HOLA HOLA </p>
-<p>HOLA HOLA </p>
-<p>HOLA HOLA </p>
-<p>HOLA HOLA </p>
-<p>HOLA HOLA </p>
-<p>Despues arreglo el boton add </p>
-<Boton ruta="New_post"/> 
+    
+
+    <Boton ruta="New_post"/> 
 </div>
   
 </template>

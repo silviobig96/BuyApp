@@ -2,48 +2,29 @@
     <v-container grid-list-lg>
 
             <v-app-bar app dark flat hide-on-scroll>  
-                <v-btn icon :to="{name: 'home'}">
+                <v-btn icon :to="{name: 'Sugerencia'}">
                 <v-icon>arrow_back</v-icon>
                 </v-btn>
-                <v-toolbar-title> Nuevo Post</v-toolbar-title>
+                <v-toolbar-title> Nueva Sugerencia</v-toolbar-title>
                 <v-spacer></v-spacer>
                     <v-img aspect-ratio="1" max-width="50" max-height="40" src="../assets/act.png"></v-img>
-                <v-btn icon>
+                <v-btn icon :to="{name: 'Sugerencia'}">
                     <v-icon>done</v-icon>
                 </v-btn>
             </v-app-bar>  
 
         
 
-        <v-layout wrap >
-            <v-flex xs12>
-                <v-card class="ml-4 mr-4" dense>
-                    <v-form class="px-3">
-                        <v-input>Enlace de la Oferta</v-input>
-                        <v-text-field  color="oficial" placeholder="http://www.example.com" hint="Pega el enlace donde otros usuarios pueden conseguir más información o comprar la oferta directamente" persistent-hint>
-                            <v-icon slot="prepend" >link</v-icon>
-                        </v-text-field>
-                    </v-form>
-                </v-card>
-            </v-flex>
+        <v-layout wrap>
             
             <v-flex xs12>
                 <v-card class="ml-4 mr-4" dense>
                     <v-form class="px-3">
-                        <v-input >Detalles de la Oferta</v-input>
+                        <v-input >Detalles de tu Sugerencia</v-input>
 
                         <!-- Subir foto y mostrar -->
                         
-                        <v-flex xs12 class="text-xs-center text-sm-center text-md-center text-lg-center" >
-                            <v-img  :src="imageUrl" alt="Subir una imagen" v-if="imageUrl"></v-img>
-                           <!--  <img :src="imageUrl" height="150" v-if="imageUrl"/> -->
-                           <!-- <v-card dark @click='pickFile' v-model='imageName' max-width="100%" height="200" class="text-center ">
-                               <v-img  :src="imageUrl" alt="Subir una imagen" v-if="imageUrl"></v-img>
-                               <v-icon >add_a_photo</v-icon>
-                               
-                           </v-card> -->                         
-                           
-                            <v-text-field color="oficial" label="Seleciona una imagen de tu Oferta" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
+                        <v-flex xs12 class="text-xs-center text-sm-center text-md-center text-lg-center">
                             <input
                                 type="file"
                                 style="display: none"
@@ -62,7 +43,7 @@
 
                         <!-- Area de categoria -->
 
-                        <v-flex xs12 >
+                      <!--  <v-flex xs12 >
                             <v-combobox v-model="select" color="oficial" :items="items" label="Categorias*" multiple chips hint="Debes Seleccionar al menos 1 categoria" persistent-hint clearable item-color="oficial">
                                 <v-icon slot="prepend" >library_books</v-icon>
                             <template v-slot:selection="data">
@@ -84,6 +65,7 @@
                             </template>
                             </v-combobox>
                         </v-flex>
+                        -->
 
                     </v-form>
                 </v-card>
@@ -94,7 +76,7 @@
 
     </v-container>
 </template>
-
+<!--
 <script>
 export default {
   data: () => ({
@@ -142,3 +124,4 @@ export default {
 }
 </script>
 
+-->

@@ -74,15 +74,16 @@
       <v-img :aspect-ratio="16/9" src="../assets/fondob1.jpg">
       <v-layout mt-5 column align-center>
         <v-flex>
-          <a href="./Ver_perfil">
+          <router-link to="/Iniciarsesion">
             <v-avatar>
-            <img src="https://randomuser.me/api/portraits/men/85.jpg" high="20px" width="20px">
+            <img src="../assets/Usuarios/img_usuario_vacio.png" alt="Iniciar sesion"  high="20px" width="20px">
           </v-avatar>
-          </a>
-          
+          </router-link> 
         </v-flex>
         <v-flex mt-5 align-end >
-          <span class="white--text">silviobig96</span>
+          <router-link tag="p" to="/Iniciarsesion">
+          <span class="white--text">Iniciar Sesión</span>
+          </router-link> 
         </v-flex>
       </v-layout>
       </v-img>

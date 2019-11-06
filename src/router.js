@@ -1,15 +1,20 @@
-import Vue from "vue";
-import Router from "vue-router";
-import Home from "./views/Home.vue";
-import Ver_perfil from "./views/Ver_perfil";
-import Acerca_de from "./views/Acercade";
-import Sugerencia from "./views/Sugerencia";
-import Que_hay_denuevo from "./views/Nuevo";
-import Ajustes from "./views/Ajustes";
-import New_post from "./views/New_post";
-import Editar_perfil from "./views/Editar_perfil";
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from './views/Home.vue'
+import Ver_perfil from './views/Ver_perfil'
+import Acerca_de from './views/Acercade'
+import Sugerencia from './views/Sugerencia'
+import Que_hay_denuevo from './views/Nuevo'
+import Ajustes from './views/Ajustes'
+import New_post from './views/New_post'
+import Det_post from './views/Det_post'
+import Registrar from './views/Registrar'
+import Iniciarsesion from './views/Iniciarsesion'
 
-Vue.use(Router);
+import Nueva_sug from './views/Nueva_sug'
+import Notificaciones from './views/Notificaciones'
+
+Vue.use(Router)
 
 export default new Router({
   mode: "history",
@@ -61,13 +66,37 @@ export default new Router({
       component: Editar_perfil
     },
     {
+      path: '/Nueva_sug',
+      name: '/Nueva_sug',
+      component: Nueva_sug
+    },
+    {
+      path: '/Notificaciones',
+      name: '/Notificaciones',
+      component: Notificaciones
+    },
+    {
+      path: '/Det_post',
+      name: 'Det_post',
+      component: Det_post
+    }, 
+    {
       path: "/about",
       name: "about",
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },  
+    {
+      path: '/Iniciarsesion',
+      name: 'Iniciarsesion',
+      component: Iniciarsesion
+    },  
+    {
+      path: '/Registrar',
+      name: 'Registrar',
+      component: Registrar
     }
   ]
 });
