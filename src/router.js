@@ -10,6 +10,7 @@ import New_post from './views/New_post'
 import Det_post from './views/Det_post'
 import Registrar from './views/Registrar'
 import Iniciarsesion from './views/Iniciarsesion'
+import Editar_perfil from './views/Editar_perfil'
 
 import Nueva_sug from './views/Nueva_sug'
 import Notificaciones from './views/Notificaciones'

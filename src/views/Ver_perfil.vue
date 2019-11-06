@@ -15,7 +15,9 @@
       <v-avatar size="80">
         <img src="../assets/Usuarios/img_usuario_vacio.png" alt="avatar" />
       </v-avatar>
+      <router-link to="/Editar_perfil">
       <v-btn class="ma-5" outlined color="#69a286">Editar perfil</v-btn>
+      </router-link> 
     </v-layout>
     <v-layout justify-center align-center-between class="mt-2">
       <v-flex class="text-center">

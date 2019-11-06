@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-lg>
     <v-app-bar app dark flat hide-on-scroll>
-      <v-btn icon :to="{name: 'Editar_perfil'}">
+      <v-btn icon :to="{name: 'Ver_perfil'}">
         <v-icon>arrow_back</v-icon>
       </v-btn>
       <v-toolbar-title>Editar Perfil</v-toolbar-title>
