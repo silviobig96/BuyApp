@@ -17,49 +17,54 @@ import Notificaciones from './views/Notificaciones'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'home',
+      path: "/",
+      name: "home",
       component: Home
     },
     {
-      path: '/Ver_perfil',
-      name: 'Ver_perfil',
+      path: "/Ver_perfil",
+      name: "Ver_perfil",
       component: Ver_perfil
     },
     {
-      path: '/Acercade',
-      name: 'Acercade',
+      path: "/Acercade",
+      name: "Acercade",
       component: Acerca_de
     },
     {
-      path: '/Sugerencia',
-      name: 'Sugerencia',
+      path: "/Sugerencia",
+      name: "Sugerencia",
       component: Sugerencia
     },
     {
-      path: '/Que_hay_denuevo',
-      name: 'Que_hay_denuevo',
+      path: "/Que_hay_denuevo",
+      name: "Que_hay_denuevo",
       component: Que_hay_denuevo
     },
     {
-      path: '/Ajustes',
-      name: 'Ajustes',
+      path: "/Ajustes",
+      name: "Ajustes",
       component: Ajustes
     },
     {
-      path: '/Acerca_de',
-      name: 'Acerca_de',
+      path: "/Acerca_de",
+      name: "Acerca_de",
       component: Acerca_de
-    },  
+    },
     {
-      path: '/New_post',
-      name: 'New_post',
+      path: "/New_post",
+      name: "New_post",
       component: New_post
-    }, 
+    },
+    {
+      path: "/Editar_perfil",
+      name: "Editar_perfil",
+      component: Editar_perfil
+    },
     {
       path: '/Nueva_sug',
       name: '/Nueva_sug',
@@ -76,8 +81,8 @@ export default new Router({
       component: Det_post
     }, 
     {
-      path: '/about',
-      name: 'about',
+      path: "/about",
+      name: "about",
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -94,4 +99,4 @@ export default new Router({
       component: Registrar
     }
   ]
-})
+});
