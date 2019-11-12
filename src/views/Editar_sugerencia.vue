@@ -1,13 +1,13 @@
 <template>
-  <v-container grid-list-lg>
+<v-container grid-list-lg>
     <v-app-bar app dark flat hide-on-scroll>
       <v-btn icon :to="{name: 'Sugerencia'}">
         <v-icon>arrow_back</v-icon>
       </v-btn>
-      <v-toolbar-title>Nueva Sugerencia</v-toolbar-title>
+      <v-toolbar-title>Edita tu Sugerencia</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-img aspect-ratio="1" max-width="50" max-height="40" src="../assets/act.png"></v-img>
-      <v-btn icon type="submit" form="Form_sugerencia">
+      <v-btn icon type="submit" form="Form_editar_sugerencia">
         <v-icon>done</v-icon>
       </v-btn>
     </v-app-bar>
@@ -15,8 +15,8 @@
     <v-layout wrap>
       <v-flex xs12>
         <v-card class="ml-4 mr-4" dense>
-          <v-form @submit.prevent="agregar_sugerencia()" class="px-3" id="Form_sugerencia">
-            <v-card-title>Detalles de tu Sugerencia</v-card-title>
+          <v-form @submit.prevent="editar_sugerencia()" class="px-3" id="Form_editar_sugerencia">
+            <v-card-title>Detalles de tu Sugerencia {{id_sugerencia}}</v-card-title>
             <v-text-field 
             color="oficial"  
             label="Título"
@@ -35,21 +35,23 @@
         </v-card>
       </v-flex>
     </v-layout>
-  </v-container>
+
+</v-container>
 </template>
 
 <script>
 import { mapState } from "vuex";
 
 export default {
-  data: () => ({
+    data: () => ({
     sugerencia: {titulo: '', descripcion: ''}
   }),
   computed:{
-    ...mapState(['token'])
+    ...mapState(['token']),
+    ...mapState(['usuarioDB'])
   },
   methods: {
-    agregar_sugerencia(){
+    editar_sugerencia(){
       let config = {
         headers: {
           token: this.token
@@ -63,6 +65,10 @@ export default {
         console.log(e.response);
       })
     }
-  }
+  },
+props: {
+    id_sugerencia: ''
 }
+}
+
 </script>

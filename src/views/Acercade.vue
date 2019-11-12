@@ -57,9 +57,9 @@ export default {
     return {
         item: 0,
         items: [
-          { title: '¡Síguenos en Twitter!', icon: 'star', subti: 'BuyApp', name:''},
-          { title: 'Danos me gusta en Facebook', icon: 'thumb_up', subti: 'BuyApp', name:''},
-          { title: 'Regálanos tus likes en Instagram', icon: 'favorite', subti: 'BuyApp', name:''},
+          { title: '¡Síguenos en Twitter!', icon: 'mdi-twitter', subti: 'BuyApp', name:''},
+          { title: 'Danos me gusta en Facebook', icon: 'mdi-facebook-box', subti: 'BuyApp', name:''},
+          { title: 'Regálanos tus likes en Instagram', icon: 'mdi-instagram', subti: 'BuyApp', name:''},
           { title: 'Contacto', icon: 'mail', subti: 'gerencia@BuyApp.com', name:''}
         ]
     }

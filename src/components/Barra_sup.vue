@@ -73,16 +73,30 @@
     >
       <v-img :aspect-ratio="16/9" src="../assets/fondob1.jpg">
       <v-layout mt-5 column align-center>
-        <v-flex>
+        <!-- usuario no logueado -->
+        <v-flex v-if="!usuario_activo">
           <router-link to="/Iniciarsesion">
             <v-avatar>
             <img src="../assets/Usuarios/img_usuario_vacio.png" alt="Iniciar sesion"  high="20px" width="20px">
           </v-avatar>
           </router-link> 
         </v-flex>
-        <v-flex mt-5 align-end >
+        <v-flex mt-5 align-end v-if="!usuario_activo" >
           <router-link tag="p" to="/Iniciarsesion">
           <span class="white--text">Iniciar Sesión</span>
+          </router-link> 
+        </v-flex>
+        <!-- usuario Logueado -->
+        <v-flex v-if="usuario_activo">
+          <router-link to="/Ver_perfil">
+            <v-avatar>
+            <img src="../assets/Usuarios/ejemplo.jpg" alt="Iniciar sesion"  high="20px" width="20px">
+          </v-avatar>
+          </router-link> 
+        </v-flex>
+        <v-flex mt-5 align-end v-if="usuario_activo" >
+          <router-link tag="p" to="/Ver_perfil">
+          <span class="white--text font-weight-bold nombre" >{{usuarioDB.data.nombre_usuario}}</span>
           </router-link> 
         </v-flex>
       </v-layout>
@@ -103,6 +117,16 @@
               <v-list-item-title v-text="item.title"></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+          <v-list-item @click="cerrar_sesion" v-if="usuario_activo">
+            <v-list-item-icon >
+              <v-icon>
+                exit_to_app
+              </v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title> Cerrar Sesión</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item> 
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -113,7 +137,15 @@
     
 </template>
 
+<style>
+  a {  text-decoration: none;}
+  .nombre{
+    text-shadow: 2px 2px 4px black;
+  }
+</style>
+
 <script>
+import { mapActions, mapGetters, mapState } from "vuex";
 export default {
   data: () => ({
       drawer: false,
@@ -124,7 +156,7 @@ export default {
           { title: '¿Qué hay de nuevo?', icon: 'new_releases', name: 'Que_hay_denuevo'},
           { title: 'Sugerencias', icon: 'announcement', name:'Sugerencia' },
           { title: 'Ajustes', icon: 'settings', name: 'ajustes' },
-          { title: 'Cerrar sesión', icon: 'exit_to_app' }
+          //{ title: 'Cerrar sesión', icon: 'exit_to_app' }
         ],
         sheet: false,
       tiles: [
@@ -137,7 +169,13 @@ export default {
       ],
       group: null,
     }),
-
+    methods:{
+      ...mapActions(['cerrar_sesion'])
+    },
+    computed:{
+      ...mapGetters(['usuario_activo']),
+      ...mapState(['usuarioDB'])
+    },
     watch: {
       group () {
         this.drawer = false

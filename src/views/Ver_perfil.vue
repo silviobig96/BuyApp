@@ -7,7 +7,7 @@
         <v-btn icon :to="{name: 'home'}">
           <v-icon>arrow_back</v-icon>
         </v-btn>
-        <v-toolbar-title>@Bigotto69</v-toolbar-title>
+        <v-toolbar-title>{{usuarioDB.data.nombre_usuario}}</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-app-bar>
     </v-layout>
@@ -16,8 +16,8 @@
         <img src="../assets/Usuarios/img_usuario_vacio.png" alt="avatar" />
       </v-avatar>
       <router-link to="/Editar_perfil">
-      <v-btn class="ma-5" outlined color="#69a286">Editar perfil</v-btn>
-      </router-link> 
+        <v-btn class="ma-5" outlined color="#69a286">Editar perfil</v-btn>
+      </router-link>
     </v-layout>
     <v-layout justify-center align-center-between class="mt-2">
       <v-flex class="text-center">
@@ -84,6 +84,7 @@
 
 
 <script>
+import {mapState } from "vuex";
 export default {
   data: () => ({
     cards: [
@@ -103,7 +104,10 @@ export default {
         flex: 6
       }
     ]
-  })
+  }),
+  computed: {
+    ...mapState(["usuarioDB"])
+  }
 };
 </script>
 

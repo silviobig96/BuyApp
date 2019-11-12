@@ -11,13 +11,15 @@ import Det_post from './views/Det_post'
 import Registrar from './views/Registrar'
 import Iniciarsesion from './views/Iniciarsesion'
 import Editar_perfil from './views/Editar_perfil'
-
 import Nueva_sug from './views/Nueva_sug'
 import Notificaciones from './views/Notificaciones'
+import Editar_sugerencia from './views/Editar_sugerencia'
+
+import store from './store'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
@@ -29,7 +31,8 @@ export default new Router({
     {
       path: "/Ver_perfil",
       name: "Ver_perfil",
-      component: Ver_perfil
+      component: Ver_perfil,
+      meta: {requiere_auth: true}
     },
     {
       path: "/Acercade",
@@ -59,22 +62,32 @@ export default new Router({
     {
       path: "/New_post",
       name: "New_post",
-      component: New_post
+      component: New_post,
+      meta: {requiere_auth: true}
     },
     {
       path: "/Editar_perfil",
       name: "Editar_perfil",
-      component: Editar_perfil
+      component: Editar_perfil,
+      meta: {requiere_auth: true}
     },
     {
       path: '/Nueva_sug',
-      name: '/Nueva_sug',
-      component: Nueva_sug
+      name: 'Nueva_sug',
+      component: Nueva_sug,
+      meta: {requiere_auth: true}
+    },
+    {
+      path: '/Editar_sugerencia/:id',
+      name: 'Editar_sugerencia',
+      component: Editar_sugerencia,
+      meta: {requiere_auth: true}
     },
     {
       path: '/Notificaciones',
-      name: '/Notificaciones',
-      component: Notificaciones
+      name: 'Notificaciones',
+      component: Notificaciones,
+      meta: {requiere_auth: true}
     },
     {
       path: '/Det_post',
@@ -101,3 +114,15 @@ export default new Router({
     }
   ]
 });
+
+router.beforeEach((to, from, next) => {
+  const ruta_protegida = to.matched.some(record => record.meta.requiere_auth);
+  
+  if(ruta_protegida && store.state.token === ''){
+    next({name: 'Iniciarsesion'})
+  }else{
+    next()
+  }
+})
+
+export default router;
