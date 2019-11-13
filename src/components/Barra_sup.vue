@@ -88,14 +88,14 @@
         </v-flex>
         <!-- usuario Logueado -->
         <v-flex v-if="usuario_activo">
-          <router-link to="/Ver_perfil">
+          <router-link :to="{name: 'Ver_perfil', params: {id:usuarioDB.data._id}}">
             <v-avatar>
             <img src="../assets/Usuarios/ejemplo.jpg" alt="Iniciar sesion"  high="20px" width="20px">
           </v-avatar>
           </router-link> 
         </v-flex>
         <v-flex mt-5 align-end v-if="usuario_activo" >
-          <router-link tag="p" to="/Ver_perfil">
+          <router-link tag="p" :to="{name: 'Ver_perfil', params: {id:usuarioDB.data._id}}">
           <span class="white--text font-weight-bold nombre" >{{usuarioDB.data.nombre_usuario}}</span>
           </router-link> 
         </v-flex>

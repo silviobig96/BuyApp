@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-lg>
     <v-app-bar app dark flat hide-on-scroll>
-      <v-btn icon :to="{name: 'Ver_perfil'}">
+      <v-btn icon :to="{name: 'Ver_perfil', params: {id:usuarioDB.data._id}}">
         <v-icon>arrow_back</v-icon>
       </v-btn>
       <v-toolbar-title>Editar Perfil</v-toolbar-title>
@@ -45,12 +45,16 @@
 </template>
 
 <script>
+import {mapState } from "vuex";
 export default {
   data() {
     return {
       select: "Mujer",
       items: ["Mujer", "Hombre"]
     };
+  },
+  computed:{
+      ...mapState(['usuarioDB'])
   }
 };
 </script>

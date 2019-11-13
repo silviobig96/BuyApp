@@ -14,6 +14,7 @@ import Editar_perfil from './views/Editar_perfil'
 import Nueva_sug from './views/Nueva_sug'
 import Notificaciones from './views/Notificaciones'
 import Editar_sugerencia from './views/Editar_sugerencia'
+import Ver_sugerencia from './views/Ver_sugerencia'
 
 import store from './store'
 
@@ -29,7 +30,7 @@ const router = new Router({
       component: Home
     },
     {
-      path: "/Ver_perfil",
+      path: "/Ver_perfil/:id",
       name: "Ver_perfil",
       component: Ver_perfil,
       meta: {requiere_auth: true}
@@ -82,6 +83,11 @@ const router = new Router({
       name: 'Editar_sugerencia',
       component: Editar_sugerencia,
       meta: {requiere_auth: true}
+    },
+    {
+      path: '/Ver_sugerencia/:id',
+      name: 'Ver_sugerencia',
+      component: Ver_sugerencia
     },
     {
       path: '/Notificaciones',

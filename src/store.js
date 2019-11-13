@@ -42,6 +42,13 @@ export default new Vuex.Store({
       }else{
         commit('obtener_usuario', '');
       }
+    },
+    es_del_usuario(id_seleccionado, id_logueado){
+      if(id_seleccionado===id_logueado){
+        return true;
+      }else{
+        return false;
+      }
     }
   },
   getters: {

@@ -8,9 +8,9 @@
     </v-app-bar>
 
     <v-layout row wrap>
-      <!-- Cartas de sugerencias -->
+      <!-- Cartas de sugerencias :to="{name: 'Editar_sugerencia' , params: {id:item._id}}"-->
       <v-flex xs12 v-for="(item,index) in sugerencias" :key="index" >
-        <v-card class="mx-auto" dark max-width="400" :to="{name: 'Editar_sugerencia' , params: {id:item._id}}">
+        <v-card class="mx-auto" dark max-width="400" :to="{name: 'Ver_sugerencia', params: {id:item._id}}">
           <v-chip label color="oficial" text-color="black" class="ml-0">
             <v-icon left>label</v-icon>{{item.titulo}}
           </v-chip>
@@ -50,10 +50,10 @@ export default {
     sugerencias: []
   }),
   created(){
-    this.mostrar_notas();
+    this.mostrar_sugerencias();
   },
   methods: {
-    mostrar_notas(){
+    mostrar_sugerencias(){
       this.axios.get('/get_sugerencias')
       .then(res => {
         this.sugerencias = res.data;
@@ -64,7 +64,6 @@ export default {
     },
     obtener_fecha(fecha){
       const d = new Date(fecha);
-      const a = new Date();
       a : Date.now;
       return d.getDate() + ' - ' + (d.getMonth()+1) + ' - ' + d.getFullYear();
     }
