@@ -10,7 +10,7 @@
     "@babel/polyfill": "^7.4.4",
     "axios": "^0.21.2",
     "core-js": "^2.6.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jwt-decode": "^2.2.0",
     "material-design-icons-iconfont": "^5.0.1",
     "roboto-fontface": "*",
